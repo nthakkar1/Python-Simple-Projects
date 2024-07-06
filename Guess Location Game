@@ -1,0 +1,31 @@
+from random import shuffle
+
+
+def shuffle_list(mylist):
+    shuffle(mylist)
+    # Randomly arrange the list
+    return (mylist)
+
+
+def player_guess():
+    guess = ''
+    # make player guess where the ball could be
+    while guess not in ['0', '1', '2']:
+        guess = input('Pick a number from 0 to 2')
+    return int(guess)
+
+
+def check(mylist, guess):
+    # Compare user output to ball location
+    if mylist[guess] == 'o':
+        print('Correct')
+    else:
+        print('Wrong')
+        print(mylist)
+
+
+mylist = [' ', 'o', ' ']
+mixed_list = shuffle_list(mylist)
+guess = player_guess()
+
+print(check(mixed_list,guess))
